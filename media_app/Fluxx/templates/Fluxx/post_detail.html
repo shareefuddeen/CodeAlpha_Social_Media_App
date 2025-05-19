@@ -1,0 +1,42 @@
+{% extends 'Fluxx/base.html' %} 
+{% load widget_tweaks %}
+{%block content %}
+
+<div class="screen">
+    <div class="screen-head">
+        <img src="{{post.author.profile.avatar.url}}" class="img-fluid rounded-circle"  width="40" height="40" alt="avatar">
+        <h2>Post by: <a href="{% url 'profile' post.author.id %}">{{ post.author.username}}</a></h2>
+    </div>
+    <div class="content">
+        <h2>{{post.content}}</h2>
+        {% if request.user == post.author %}
+        <form action="{% url 'delete-post' post.id %}" method="post" >
+            {% csrf_token %}
+            <div class="text-center mt-3">
+                <button class="btn btn-danger">delete post</button>
+            </div>
+        </form>
+        {% endif %}
+    </div>
+<form method="post" >
+    {% csrf_token %}
+    {{ form.text|add_class:"form-control" |attr:"placeholder:Add comment"}}
+      <div class="content-btn">
+        <button class="btn-primary">add comment</button>
+      </div>
+</form>
+{% for comment in comments %}
+<div class="flex-avatar-cotainer mt-4">
+<div class="flex-avatar m-0">
+<img src="{{comment.author.profile.avatar.url}}" alt="avatar" class="rounded-circle img-thumbnail" width="40" height="40">
+<h4><a href="{% url 'profile' comment.author.id %}" class="a">{{comment.author.username}}</a></h4>
+</div>
+<p class="mt-2">{{comment.text}}</p>
+</div>
+
+{% empty %}
+<p>no comment</p>
+{% endfor %}
+{% endblock %}
+</div>
+

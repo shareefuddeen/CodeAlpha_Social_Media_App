@@ -1,0 +1,234 @@
+body {
+    background-color: rgb(237, 241, 241);
+    padding: 0px;
+    margin: 0px;
+}
+
+.posts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6em;
+    margin-top: 12em;
+}
+
+.single-post {
+    background-color: transparent;
+    text-align: center;
+    min-width: 50%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: 100%;
+    background-color: white;
+}
+
+.flex-fluxx {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-fluxx a {
+    font-size: 22px;
+}
+
+.like-comment {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.follow-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.like-comment a {
+    margin: 6px;
+    right: 0;
+    bottom: -16px;
+}
+
+.post-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    background-color: #fff;
+}
+
+.post-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.single-post {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 12px;
+    min-width: 12em;
+}
+
+.follow-img {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.follow-img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-content {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(236, 236, 236);
+    padding: 6px 12px;
+    margin: 0 42px;
+    border-radius: 16px;
+}
+.navbar a:hover {
+    background-color: wheat;
+    color: rgb(19, 17, 51);
+    transition-duration: 0.7s;
+    text-decoration: none;
+}
+
+.brand {
+    color: rgb(236, 236, 236);
+    margin: 24px;
+}
+.screen {
+    margin-top: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+.screen-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.posts a:hover {
+    text-decoration: none;
+}
+.posts a {
+    color: black;
+}
+.content h2 {
+    margin: 0 12em;
+}
+.content-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+}
+.form {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form form {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4em;
+}
+.flex-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.flex-avatar-cotainer {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    background-color: #fff;
+    padding: 6px;
+    min-width: 20%;
+    min-height: auto;
+    text-align: center;
+}
+
+.flex-avatar-cotainer:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-screen {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    text-align: center;
+}
+
+.mini-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    min-height: 60%;
+    min-width: 60%;
+    border-radius: 12px;
+    color: white;
+}
+.mini-screen a {
+    color: white;
+}
+.mini-screen a:hover {
+    color: blue;
+}
+.a {
+    color: black;
+}
+.a:hover {
+    color: blue;
+    text-decoration: none;
+}

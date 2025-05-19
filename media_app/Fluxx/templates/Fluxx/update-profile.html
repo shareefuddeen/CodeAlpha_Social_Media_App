@@ -1,0 +1,15 @@
+{% extends 'Fluxx/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="form">
+    <form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{form.bio|add_class:"form-control"|attr:"placeholder:bio"}}
+    {{form.avatar|add_class:"form-control"}}
+    <button class="btn btn-primary">update</button>
+</form>
+</div>
+
+{% endblock  %}

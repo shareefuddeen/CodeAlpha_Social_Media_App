@@ -1,0 +1,29 @@
+{% extends 'Fluxx/base.html' %}
+{% load static %}
+{% block content %}
+<div class="profile-screen">
+  <div class="mini-screen">
+    <img src="{{ profile.avatar.url }}" class="img-fluid rounded-circle" width="40" height="40" alt="avatar" />
+  <h5 >{{profile.user.username}}</h5>
+  {% if request.user == profile.user %}
+    <a href="{% url 'update-profile' %}">update profile</a>
+  {% endif %}
+<a href="{% url 'follow' user_id=profile.user.id %}">
+    {% if request.user in profile.followers.all %}
+      unfollow
+    {% else %}
+      Follow
+    {% endif %}
+  </a>
+
+  <div>
+    <div>
+      <p >{{ profile.bio }}</p>
+      <p> followers: {{profile.followers.count}}</p>
+    </div>
+  </div>
+  </div>
+
+</div>
+  
+{% endblock %}

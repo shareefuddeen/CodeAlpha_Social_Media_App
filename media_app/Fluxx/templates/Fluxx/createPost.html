@@ -1,0 +1,13 @@
+{% extends 'fluxx/base.html' %} {% load static %} {% load widget_tweaks %}
+{%block content %}
+
+<div class="form">
+<form method="post">
+    {% csrf_token %} 
+    {{form.title|add_class:"form-control"|attr:"placeholder:title"}}
+    {{form.content|add_class:"form-control my-4"|attr:"placeholder:write a post"}}
+    <button class="btn btn-lg btn-primary btn-block">create post</button>
+</form>
+</div>
+
+{% endblock content %}
