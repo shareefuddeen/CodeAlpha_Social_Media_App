@@ -1,15 +1,26 @@
-{% extends 'Fluxx/base.html' %}
+{% extends 'toolie/base.html' %}
 {% load static %}
 {% load widget_tweaks %}
 
 {% block content %}
-<div class="form">
-    <form method="post" enctype="multipart/form-data" >
-    {% csrf_token %}
-    {{form.bio|add_class:"form-control"|attr:"placeholder:bio"}}
-    {{form.avatar|add_class:"form-control"}}
-    <button class="btn btn-primary">update</button>
-</form>
-</div>
+<div class="container mt-5">
+    <div class="card p-4 shadow-sm">
+        <h3 class="mb-4">Update Profile</h3>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
 
-{% endblock  %}
+            <div class="mb-3">
+                <label for="{{ form.bio.id_for_label }}" class="form-label">Bio</label>
+                {{ form.bio|add_class:"form-control"|attr:"placeholder:Write something about yourself" }}
+            </div>
+
+            <div class="mb-3">
+                <label for="{{ form.avatar.id_for_label }}" class="form-label">Profile Picture</label>
+                {{ form.avatar|add_class:"form-control" }}
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Update</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

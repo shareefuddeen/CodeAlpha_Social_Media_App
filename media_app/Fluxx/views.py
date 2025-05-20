@@ -133,10 +133,10 @@ def  post_delete_view(request,post_id):
 def update_profile(request):
  
     if request.method=="POST":
-        form = update_profile_form(request.POST,requst.FILES,instance=request.user)
+        form = update_profile_form(request.POST,request.FILES,instance=request.user)
         if form.is_valid():
             form.save()
-            return redirect("profile")
+            return redirect("profile", user_id=request.user.id)
     else:
         form = update_profile_form(instance = request.user)
     
